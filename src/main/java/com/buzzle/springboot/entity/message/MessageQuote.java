@@ -1,4 +1,4 @@
 package com.buzzle.springboot.entity.message;
 
-public class MessageQuote {
+public class MessageQuote extends Message {
 }

@@ -1,4 +1,4 @@
 package com.buzzle.springboot.entity.message;
 
-public class MessageAudio {
+public class MessageAudio extends Message {
 }

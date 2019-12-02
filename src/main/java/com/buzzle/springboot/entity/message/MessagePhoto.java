@@ -1,4 +1,4 @@
 package com.buzzle.springboot.entity.message;
 
-public class MessagePhoto {
+public class MessagePhoto extends Message {
 }

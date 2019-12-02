@@ -1,4 +1,4 @@
 package com.buzzle.springboot.entity.message;
 
-public class MessageLink {
+public class MessageLink extends Message {
 }
