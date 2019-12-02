@@ -1,11 +1,14 @@
 package com.buzzle.springboot.entity;
 
+import java.util.List;
+
 public class User {
     private Long id;
 
     private String userName;
     private String password;
     private String mail;
+    private List<Blog> blogs;
 
     public User() {
     }
