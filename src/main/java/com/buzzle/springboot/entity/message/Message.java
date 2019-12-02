@@ -12,4 +12,5 @@ public class Message {
     protected User user;
     protected List<String> hashtags;
     protected Date currentDate;
+    protected int nbrOfLikes;
 }
