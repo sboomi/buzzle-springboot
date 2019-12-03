@@ -12,13 +12,14 @@ import java.util.List;
 public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
-    protected String category;
-    protected String title;
-    protected User user;
-    protected List<String> hashtags;
-    protected Date currentDate;
-    protected int nbrOfLikes;
+    private Long id;
+    private String category;
+    private String title;
+    private User user;
+    private List<String> hashtags;
+    private Date currentDate;
+    private int nbrOfLikes;
+    private String content;
 
     public Message() {
     }
