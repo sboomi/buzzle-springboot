@@ -17,7 +17,7 @@ public class SpringbootApplication {
         SpringApplication.run(SpringbootApplication.class, args);
     }
 
-    @Bean
+    /*@Bean
     CommandLineRunner init(UserRepository userRepository) {
         return args -> {
             Stream.of("janedoes", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(username -> {
@@ -26,6 +26,6 @@ public class SpringbootApplication {
             });
             userRepository.findAll().forEach(System.out::println);
         };
-    }
+    }*/
 
 }

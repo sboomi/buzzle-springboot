@@ -14,7 +14,7 @@ public class User {
     private String userName;
     private String password;
     private String mail;
-    private List<Blog> blogs;
+    //private List<Blog> blogs;
 
     public User() {
     }
@@ -23,9 +23,9 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
-        if(this.blogs.isEmpty()){
+        /*if(this.blogs.isEmpty()){
             this.blogs = new ArrayList<>();
-        }
+        }*/
     }
 
     public String getUserName() {
@@ -52,6 +52,14 @@ public class User {
         this.mail = mail;
     }
 
+    /*public List<Blog> getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(List<Blog> blogs) {
+        this.blogs = blogs;
+    }*/
+
     @Override
     public String toString() {
         return "User{" +
@@ -59,7 +67,7 @@ public class User {
                 ", userName='" + userName + '\'' +
                 ", password='" + password + '\'' +
                 ", mail='" + mail + '\'' +
-                ", blogs=" + blogs +
+                //", blogs=" + blogs +
                 '}';
     }
 }
