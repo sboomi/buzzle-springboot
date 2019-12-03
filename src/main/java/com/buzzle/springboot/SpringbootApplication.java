@@ -17,15 +17,15 @@ public class SpringbootApplication {
         SpringApplication.run(SpringbootApplication.class, args);
     }
 
-    /*@Bean
+    @Bean
     CommandLineRunner init(UserRepository userRepository) {
         return args -> {
-            Stream.of("janedoes", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(username -> {
+            Stream.of("whitestrightrey", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(username -> {
                 User user = new User(username, username+"06" , username.toLowerCase() + "@domain.com");
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);
         };
-    }*/
+    }
 
 }
