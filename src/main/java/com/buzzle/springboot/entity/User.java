@@ -11,8 +11,20 @@ public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    /**<b>Notice:</b>
+     * <p>Always name your columns according to your database</p>
+     * <p>They are case-sensitive; be careful</p>
+     * <p>Idk how to put another scheman than the main one (public)</p>
+     * */
+
+
+    @Column(name = "username")
     private String userName;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "mail")
     private String mail;
     //private List<Blog> blogs;
 
