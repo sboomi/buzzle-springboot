@@ -1,7 +1,5 @@
 package com.buzzle.springboot.entity;
 
-import com.buzzle.springboot.entity.message.Message;
-
 import java.util.List;
 
 public class Blog {

@@ -1,4 +1,4 @@
-package com.buzzle.springboot.entity.message;
+package com.buzzle.springboot.entity;
 
 import com.buzzle.springboot.entity.User;
 
