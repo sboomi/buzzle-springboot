@@ -13,7 +13,7 @@ public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String category;
+    private MessageCategory category;
     private String title;
     private User user;
     private List<String> hashtags;
@@ -34,11 +34,11 @@ public class Message {
         this.nbrOfLikes = 0;
     }
 
-    public String getCategory() {
+    public MessageCategory getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(MessageCategory category) {
         this.category = category;
     }
 
