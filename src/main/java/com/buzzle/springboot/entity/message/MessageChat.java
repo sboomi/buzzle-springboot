@@ -2,9 +2,16 @@ package com.buzzle.springboot.entity.message;
 
 import com.buzzle.springboot.entity.Message;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
-public class MessageChat extends Message {
+@Entity
+@Table(name="messages_chat")
+public class MessageChat extends Message implements Serializable {
+    @Column(name="content")
     private String dialog;
 
     public MessageChat() {
@@ -22,5 +29,19 @@ public class MessageChat extends Message {
 
     public void setDialog(String dialog) {
         this.dialog = dialog;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageChat{" +
+                "dialog='" + dialog + '\'' +
+                ", id=" + id +
+                ", category='" + category + '\'' +
+                ", title='" + title + '\'' +
+                ", hashtagChain='" + hashtagChain + '\'' +
+                ", currentDate=" + currentDate +
+                ", nbrOfLikes=" + nbrOfLikes +
+                ", blog=" + blog +
+                '}';
     }
 }

@@ -1,9 +1,8 @@
 package com.buzzle.springboot.controller;
 
 import com.buzzle.springboot.entity.User;
-import com.buzzle.springboot.service.UserServiceImpl;
+import com.buzzle.springboot.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

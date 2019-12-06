@@ -1,12 +1,13 @@
 package com.buzzle.springboot.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,7 +27,9 @@ public class User {
 
     @Column(name = "mail")
     private String mail;
-    //private List<Blog> blogs;
+
+    @OneToMany(mappedBy = "users")
+    private List<Blog> blogs;
 
     public User() {
     }
@@ -35,9 +38,9 @@ public class User {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
-        /*if(this.blogs.isEmpty()){
+        if(this.blogs.isEmpty()){
             this.blogs = new ArrayList<>();
-        }*/
+        }
     }
 
     public String getUserName() {
@@ -64,13 +67,13 @@ public class User {
         this.mail = mail;
     }
 
-    /*public List<Blog> getBlogs() {
+    public List<Blog> getBlogs() {
         return blogs;
     }
 
     public void setBlogs(List<Blog> blogs) {
         this.blogs = blogs;
-    }*/
+    }
 
     @Override
     public String toString() {

@@ -1,6 +1,8 @@
 package com.buzzle.springboot;
 
+import com.buzzle.springboot.entity.Blog;
 import com.buzzle.springboot.entity.User;
+import com.buzzle.springboot.repository.BlogRepository;
 import com.buzzle.springboot.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +27,17 @@ public class SpringbootApplication {
                 userRepository.save(user);
             });
             userRepository.findAll().forEach(System.out::println);
+        };
+    }
+
+    @Bean
+    CommandLineRunner init(BlogRepository blogRepository) {
+        return args -> {
+            Stream.of("whitestrightrey", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(nameDomain -> {
+                Blog blog = new Blog(nameDomain, nameDomain.toUpperCase());
+                blogRepository.save(blog);
+            });
+            blogRepository.findAll().forEach(System.out::println);
         };
     }
 

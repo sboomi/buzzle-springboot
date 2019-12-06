@@ -2,9 +2,16 @@ package com.buzzle.springboot.entity.message;
 
 import com.buzzle.springboot.entity.Message;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.Date;
 
-public class MessageQuote extends Message {
+@Entity
+@Table(name="messages_quote")
+public class MessageQuote extends Message implements Serializable {
+    @Column(name="content")
     private String quote;
 
     public MessageQuote() {
@@ -22,5 +29,19 @@ public class MessageQuote extends Message {
 
     public void setQuote(String quote) {
         this.quote = quote;
+    }
+
+    @Override
+    public String toString() {
+        return "MessageQuote{" +
+                "quote='" + quote + '\'' +
+                ", id=" + id +
+                ", category='" + category + '\'' +
+                ", title='" + title + '\'' +
+                ", hashtagChain='" + hashtagChain + '\'' +
+                ", currentDate=" + currentDate +
+                ", nbrOfLikes=" + nbrOfLikes +
+                ", blog=" + blog +
+                '}';
     }
 }

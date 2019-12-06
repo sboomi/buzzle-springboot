@@ -1,7 +1,8 @@
-package com.buzzle.springboot.service;
+package com.buzzle.springboot.service.impl;
 
 import com.buzzle.springboot.entity.User;
 import com.buzzle.springboot.repository.UserRepository;
+import com.buzzle.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
