@@ -30,8 +30,7 @@ public abstract class Message implements Serializable {
     protected int nbrOfLikes;
 
     @ManyToOne
-    @JoinColumn(name="id_blog")
-    //@MapsId("blog_id")
+    @JoinColumn(name="id_blog")//@MapsId("blog_id")
     protected Blog blog;
 
     public Message() {
@@ -111,5 +110,16 @@ public abstract class Message implements Serializable {
                 ", nbrOfLikes=" + nbrOfLikes +
                 ", blog=" + blog +
                 '}';
+    }
+
+    @ManyToOne(optional = false)
+    private Blog blogs;
+
+    public Blog getBlogs() {
+        return blogs;
+    }
+
+    public void setBlogs(Blog blogs) {
+        this.blogs = blogs;
     }
 }

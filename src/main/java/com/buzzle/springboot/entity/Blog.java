@@ -1,6 +1,6 @@
 package com.buzzle.springboot.entity;
 
-import com.buzzle.springboot.key.BlogKey;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -89,5 +89,16 @@ public class Blog implements Serializable {
                 ", title='" + title + '\'' +
                 ", nameDomain='" + nameDomain + '\'' +
                 '}';
+    }
+
+    @ManyToOne(optional = false)
+    private User users;
+
+    public User getUsers() {
+        return users;
+    }
+
+    public void setUsers(User users) {
+        this.users = users;
     }
 }
