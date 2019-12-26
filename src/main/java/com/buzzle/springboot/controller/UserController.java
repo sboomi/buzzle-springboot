@@ -18,7 +18,7 @@ public class UserController {
     private UserServiceImpl userService;
 
     @GetMapping("/showUsers")
-    public String findCities(Model model){
+    public String findUsers(Model model){
         var users = (List<User>) userService.findAll();
 
         model.addAttribute("users",users);

@@ -15,7 +15,7 @@ public class User implements Serializable {
     /**<b>Notice:</b>
      * <p>Always name your columns according to your database</p>
      * <p>They are case-sensitive; be careful</p>
-     * <p>Idk how to put another scheman than the main one (public)</p>
+     * <p>Idk how to put another schema than the main one (public)</p>
      * */
 
 
