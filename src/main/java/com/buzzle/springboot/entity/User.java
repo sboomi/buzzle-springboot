@@ -38,9 +38,7 @@ public class User implements Serializable {
         this.userName = userName;
         this.password = password;
         this.mail = mail;
-        if(this.blogs.isEmpty()){
-            this.blogs = new ArrayList<>();
-        }
+        this.blogs = new ArrayList<>();
     }
 
     public String getUserName() {

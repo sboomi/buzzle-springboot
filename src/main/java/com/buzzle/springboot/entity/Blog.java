@@ -18,12 +18,11 @@ public class Blog implements Serializable {
     /*@EmbeddedId
     BlogKey blogKeyId;*/
 
-    @OneToMany(mappedBy = "blogs")
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "blogs", cascade = CascadeType.ALL)
     private List<Message> messages;
 
     @ManyToOne
-    @JoinColumn(name="id_user")
-    //@MapsId("user_id")
+    @JoinColumn(name="users_id", insertable=false, updatable = false)//@MapsId("user_id")
     private User user;
 
     @Column(name="title")
@@ -88,6 +87,7 @@ public class Blog implements Serializable {
                 ", user=" + user +
                 ", title='" + title + '\'' +
                 ", nameDomain='" + nameDomain + '\'' +
+                ", users=" + users +
                 '}';
     }
 

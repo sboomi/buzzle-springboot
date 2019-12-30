@@ -30,7 +30,7 @@ public abstract class Message implements Serializable {
     protected int nbrOfLikes;
 
     @ManyToOne
-    @JoinColumn(name="id_blog")//@MapsId("blog_id")
+    @JoinColumn(name="blogs_id", insertable=false, updatable = false)//@MapsId("blog_id")
     protected Blog blog;
 
     public Message() {
@@ -109,6 +109,7 @@ public abstract class Message implements Serializable {
                 ", currentDate=" + currentDate +
                 ", nbrOfLikes=" + nbrOfLikes +
                 ", blog=" + blog +
+                ", blogs=" + blogs +
                 '}';
     }
 
