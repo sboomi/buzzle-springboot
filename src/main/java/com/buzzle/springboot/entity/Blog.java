@@ -34,9 +34,10 @@ public class Blog implements Serializable {
     public Blog() {
     }
 
-    public Blog(String title, String nameDomain) {
+    public Blog(String title, String nameDomain, User newUser) {
         this.title = title;
         this.nameDomain = nameDomain;
+        this.users = newUser;
     }
 
     public Long getId() {
@@ -92,6 +93,7 @@ public class Blog implements Serializable {
     }
 
     @ManyToOne(optional = false)
+    @JoinColumn(name="users_id")
     private User users;
 
     public User getUsers() {

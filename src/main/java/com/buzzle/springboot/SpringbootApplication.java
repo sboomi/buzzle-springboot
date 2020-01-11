@@ -24,21 +24,26 @@ public class SpringbootApplication {
     }
 
     @Bean
-    CommandLineRunner initUser(UserRepository userRepository) {
+    CommandLineRunner initUser(UserRepository userRepository, BlogRepository blogRepository) {
         return args -> {
             Stream.of("whitestrightrey", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(username -> {
                 User user = new User(username, username+"06" , username.toLowerCase() + "@domain.com");
+                Blog blog = new Blog(username, username.toUpperCase(),user);
+                user.getBlogs().add(blog);
                 userRepository.save(user);
+                blogRepository.save(blog);
+
             });
             userRepository.findAll().forEach(System.out::println);
+            blogRepository.findAll().forEach(System.out::println);
         };
     }
 
-    @Bean
+    /*@Bean
     CommandLineRunner initBlog(BlogRepository blogRepository) {
         return args -> {
             Stream.of("whitestrightrey", "anonymouse", "billgates", "elsascupcakes", "thatonefurry").forEach(nameDomain -> {
-                Blog blog = new Blog(nameDomain, nameDomain.toUpperCase());
+                Blog blog = new Blog(nameDomain, nameDomain.toUpperCase(), new User(nameDomain, nameDomain+"123!?", nameDomain.toLowerCase()+"@example.com"));
                 blogRepository.save(blog);
             });
             blogRepository.findAll().forEach(System.out::println);
@@ -54,6 +59,6 @@ public class SpringbootApplication {
             });
             messageRepository.findAll().forEach(System.out::println);
         };
-    }
+    }*/
 
 }

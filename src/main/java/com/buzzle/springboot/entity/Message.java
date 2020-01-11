@@ -114,6 +114,7 @@ public abstract class Message implements Serializable {
     }
 
     @ManyToOne(optional = false)
+    @JoinColumn(name="blogs_id")
     private Blog blogs;
 
     public Blog getBlogs() {
