@@ -10,7 +10,7 @@ import java.util.List;
 
 @Entity //@MappedSuperClass
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@Table(name="messages")
+@Table(name="messages", schema="public")
 public abstract class Message implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
